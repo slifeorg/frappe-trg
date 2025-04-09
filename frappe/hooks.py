@@ -33,6 +33,7 @@ app_include_js = [
 app_include_css = [
 	"desk.bundle.css",
 	"report.bundle.css",
+	"/assets/frappe/css/fonts/manrope/manrope.css"
 ]
 app_include_icons = [
 	"/assets/frappe/icons/timeless/icons.svg",
