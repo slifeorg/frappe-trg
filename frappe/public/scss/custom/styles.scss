@@ -1,4 +1,5 @@
-body[data-route="List/Appointment/List"] {
+body[data-route^="List/Appointment/"],
+body[data-route^="Form/Appointment/"] {
     background:
         radial-gradient(circle at 160px 857px, var(--gradient-color-1), var(--gradient-color-2) calc(528px * 0.6)),
         radial-gradient(circle at 1510px 110px, var(--gradient-color-1), var(--gradient-color-2) calc(632px * 0.6)),
@@ -9,9 +10,30 @@ body[data-route="List/Appointment/List"] {
         background-color: var(--deep-royal-blue);
     }
 
-    .page-head, .page-container, .navbar, .form-page {
+    .page-head, .page-container, .navbar, .form-page, .sticky-top {
         background-color: transparent !important;
         border: none !important;
+        position: static!important;
+    }
+
+    .form-tabs-list {
+        position: static !important;
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .tab-pane {
+        background: #fff;
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .form-section {
+        border: none!important;
+
+        & > * {
+            margin: 0 !important;
+        }
     }
 
     .page-head-content {
@@ -64,5 +86,19 @@ body[data-route="List/Appointment/List"] {
         border-radius: 30px;
         font-weight: 500;
         height: fit-content !important;
+    }
+
+    div:has(> .form-footer) {
+        display: none;
+    }
+
+    .form-footer {
+        display: none !important;
+    }
+
+    .form-section .form-column,
+    .form-section .section-head,
+    .form-section .section-body {
+        padding: 0 !important;
     }
 }
