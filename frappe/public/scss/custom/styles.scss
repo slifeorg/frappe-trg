@@ -27,10 +27,12 @@ body[data-route^="Form/Appointment/"] {
         background: #fff;
         margin: 20px;
         border-radius: 10px;
+        padding: 40px;
     }
 
     .form-section {
         border: none!important;
+        padding: 0 !important;
 
         & > * {
             margin: 0 !important;
@@ -51,7 +53,7 @@ body[data-route^="Form/Appointment/"] {
 
     .form-tabs-list .form-tabs .nav-item:has(a.active) ~ li a {
         border-bottom-color: transparent;
-        color: var(--gray);
+        color: var(--custom-gray);
     }
 
     .page-head-content {
@@ -151,5 +153,22 @@ body[data-route^="Form/Appointment/"] {
         &:has(input.disabled-selected) {
             border-color: var(--deep-royal-blue) !important;
         }
+    }
+
+    form:has(.form-group[data-fieldtype="Check"]) {
+        display: flex;
+        gap: 20px;
+
+        .form-group {
+            margin: 0 !important;
+        }
+
+        .input-max-width {
+            padding: 0 !important;
+        }
+    }
+
+    .help-box {
+        display: none !important;
     }
 }
