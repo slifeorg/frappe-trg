@@ -20,6 +20,7 @@ body[data-route^="Form/Appointment/"] {
         position: static !important;
         margin: 20px;
         border-radius: 10px;
+        overflow: hidden;
     }
 
     .tab-pane {
@@ -100,5 +101,38 @@ body[data-route^="Form/Appointment/"] {
     .form-section .section-head,
     .form-section .section-body {
         padding: 0 !important;
+    }
+
+    input[type="text"] {
+        padding: 16px;
+        line-height: 24px;
+        border: 1px solid var(--deep-royal-blue);
+        background: var(--white);
+        border-radius: 10px;
+        font-weight: 400 !important;
+        color: var(--black) !important;
+    }
+
+    .checkbox > label {
+        padding: 15px 30px;
+        line-height: 24px;
+        border: 1px solid var(--light-gray-silver);
+        background: var(--white);
+        border-radius: 30px;
+        cursor: pointer;
+
+        [type="checkbox"] {
+            display: none;
+        }
+
+        .label-area {
+            color: var(--deep-royal-blue) !important;
+            font-weight: 400 !important;
+            line-height: 150% !important;
+        }
+
+        &:has(input.disabled-selected) {
+            border-color: var(--deep-royal-blue) !important;
+        }
     }
 }
