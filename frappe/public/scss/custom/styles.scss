@@ -249,14 +249,32 @@ body[data-route^="Form/Appointment/"] {
         padding: 0 !important;
     }
 
-    input[type="text"] {
+    input[type="text"]:not(#navbar-search) {
         padding: 16px;
         line-height: 24px;
-        border: 1px solid var(--deep-royal-blue);
+        border: 1px solid var(--light-gray-silver);
         background: var(--white);
         border-radius: 10px;
         font-weight: 400 !important;
         color: var(--black) !important;
+        transition: border 0.1s ease;
+        height: unset !important;
+
+        &:hover {
+            border: 1px solid var(--pale-blue);
+        }
+
+        &:focus {
+            border: 1px solid var(--deep-royal-blue);
+            box-shadow: none;
+        }
+    }
+
+    .link-field {
+        .link-btn {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 
     .tab-content .checkbox>label {
