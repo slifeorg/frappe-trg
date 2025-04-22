@@ -301,6 +301,41 @@ body[data-route^="Form/Appointment/"] {
         }
     }
 
+    .form-group.horizontal {
+        display: block !important;
+        position: relative;
+
+        .clearfix {
+            position: absolute;
+            z-index: 10;
+            left: 16px;
+            top: 7px;
+            height: 1px;
+            background: white;
+            width: fit-content !important;
+            padding: 0 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 16px;
+            font-size: 12px;
+            transition: color 0.1s ease;
+        }
+
+        .control-input-wrapper {
+            padding-top: 7px;
+            width: 100% !important;
+        }
+
+        &:has(input[type="text"]:focus, select:focus) label {
+            color: var(--deep-royal-blue) !important;
+        }
+    }
+
     .link-field {
         .link-btn {
             opacity: 0;
