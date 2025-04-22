@@ -284,6 +284,7 @@ body[data-route^="Form/Appointment/"] {
         background: var(--white);
         border-radius: 30px;
         cursor: pointer;
+        transition: border 0.1s ease;
 
         [type="checkbox"] {
             display: none;
@@ -297,6 +298,10 @@ body[data-route^="Form/Appointment/"] {
 
         &:has(input.disabled-selected) {
             border-color: var(--deep-royal-blue) !important;
+        }
+
+        &:hover {
+            border: 1px solid var(--pale-blue) !important;
         }
     }
 
