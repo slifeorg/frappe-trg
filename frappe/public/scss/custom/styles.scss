@@ -260,12 +260,16 @@ body[data-route^="Form/Appointment/"] {
         gap: 80px;
     }
 
+    textarea {
+        resize: none !important;
+    }
+
     input[type="text"]:not(#navbar-search),
     select.form-control,
     select.form-control.bold,
-    .like-disabled-input {
-        height: unset !important;
-        border-radius: 10px;
+    .like-disabled-input,
+    textarea {
+        border-radius: 10px !important;
         font-weight: 400 !important;
         line-height: 24px;
         color: var(--black) !important;
@@ -275,9 +279,17 @@ body[data-route^="Form/Appointment/"] {
 
     input[type="text"]:not(#navbar-search),
     select.form-control,
-    select.form-control.bold {
-        background: var(--white);
-        transition: border 0.1s ease;
+    select.form-control.bold,
+    .like-disabled-input {
+        height: unset !important;
+    }
+
+    input[type="text"]:not(#navbar-search),
+    select.form-control,
+    select.form-control.bold,
+    textarea {
+        background: var(--white) !important;
+        transition: border 0.1s ease !important;
 
         &:hover {
             border: 1px solid var(--pale-blue);
@@ -316,7 +328,8 @@ body[data-route^="Form/Appointment/"] {
         margin-bottom: 0 !important;
     }
 
-    .form-group.horizontal {
+    .form-group.horizontal,
+    .form-group:has(textarea) {
         display: block !important;
         position: relative;
 
@@ -331,6 +344,10 @@ body[data-route^="Form/Appointment/"] {
             padding: 0 4px;
             display: flex;
             align-items: center;
+            
+            .fa-globe {
+                display: none !important;
+            }
         }
 
         label {
@@ -346,9 +363,16 @@ body[data-route^="Form/Appointment/"] {
             width: 100% !important;
         }
 
-        &:has(input[type="text"]:focus, select:focus) label {
+        &:has(input[type="text"]:focus, textarea:focus, select:focus) label {
             color: var(--deep-royal-blue) !important;
         }
+    }
+
+    .form-group:has(textarea) .clearfix {
+        height: fit-content;
+        padding: 2px 4px !important;
+        border-radius: 6px;
+        top: -2px !important;
     }
 
     .link-field {
