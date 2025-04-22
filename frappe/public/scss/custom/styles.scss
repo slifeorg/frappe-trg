@@ -14,7 +14,8 @@ body[data-route^="Form/Appointment/"] {
     .page-container,
     .navbar,
     .form-page,
-    .sticky-top {
+    .sticky-top,
+    .list-row-container {
         background-color: transparent !important;
         border: none !important;
         position: static !important;
@@ -42,13 +43,29 @@ body[data-route^="Form/Appointment/"] {
         border-radius: 7px;
 
         &:checked {
-            background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%229%22%20viewBox%3D%220%200%2011%209%22%20fill%3D%22none%22%3E%3Cg%20clip-path%3D%22url(%23clip0_3194_344)%22%3E%3Cpath%20d%3D%22M1.07324%204.50065L4.02116%207.44857L9.92741%201.55273%22%20stroke%3D%22white%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip0_3194_344%22%3E%3Crect%20width%3D%2211%22%20height%3D%229%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E"),
+            background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%2021%2021%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M6.07275%2010.5007L9.02067%2013.4486L14.9269%207.55273%22%20stroke%3D%22white%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E"),
                 linear-gradient(var(--vivid-orange));
             border: none !important;
+            background-size: 100%;
         }
     }
 
+    .select-like {
+        padding: 0 !important;
+    }
+
     /* == APPOINTMENTS LIST PAGE == */
+
+    .page-actions {
+        & > .custom-actions,
+        & > .filters.flex {
+            display: none !important;
+        }
+
+        .standard-actions > *:not([data-label="Add Appointment"]) {
+            display: none !important;
+        }
+    }
 
     .list-row-col.ellipsis.list-subject.level span:last-child {
         display: none;
@@ -90,7 +107,7 @@ body[data-route^="Form/Appointment/"] {
     .list-row-container {
         .list-row {
             background-color: var(--white);
-            padding: 27px 20px 26px 0px;
+            padding: 27px 20px 26px 20px;
             height: fit-content !important;
         }
 
@@ -101,7 +118,6 @@ body[data-route^="Form/Appointment/"] {
         }
 
         .list-subject {
-            margin: 0 12px;
             flex: unset !important;
         }
     }
@@ -166,6 +182,17 @@ body[data-route^="Form/Appointment/"] {
         margin: 20px;
         border-radius: 10px;
         padding: 40px;
+
+        .form-section .section-head {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px !important;
+        }
+
+        .form-column {
+            // margin-bottom: 24px;
+            // margin-right: 100px;
+        }
     }
 
     .form-section {
@@ -255,7 +282,7 @@ body[data-route^="Form/Appointment/"] {
         }
     }
 
-    form:has(.form-group[data-fieldtype="Check"]) {
+    form:has(.form-group[data-fieldname^="custom"]) {
         display: flex;
         gap: 20px;
 
