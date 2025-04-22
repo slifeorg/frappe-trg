@@ -38,6 +38,7 @@ app_include_css = [
 app_include_icons = [
 	"/assets/frappe/icons/timeless/icons.svg",
 	"/assets/frappe/icons/espresso/icons.svg",
+	"/assets/frappe/icons/custom-trg/icons.svg",
 ]
 
 doctype_js = {
@@ -50,6 +51,7 @@ web_include_css = []
 web_include_icons = [
 	"/assets/frappe/icons/timeless/icons.svg",
 	"/assets/frappe/icons/espresso/icons.svg",
+	"/assets/frappe/icons/custom-trg/icons.svg",
 ]
 
 email_css = ["email.bundle.css"]
