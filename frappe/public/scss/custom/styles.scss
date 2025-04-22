@@ -183,15 +183,21 @@ body[data-route^="Form/Appointment/"] {
         border-radius: 10px;
         padding: 40px;
 
+        flex-direction: column;
+        gap: 40px;
+
+        &.active {
+            display: flex !important;
+        }
+
+        .form-dashboard {
+            display: none;
+        }
+
         .form-section .section-head {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 20px !important;
-        }
-
-        .form-column {
-            // margin-bottom: 24px;
-            // margin-right: 100px;
         }
     }
 
@@ -249,6 +255,11 @@ body[data-route^="Form/Appointment/"] {
         padding: 0 !important;
     }
 
+    .section-body {
+        flex-wrap: nowrap !important;
+        gap: 80px;
+    }
+
     input[type="text"]:not(#navbar-search),
     select.form-control,
     select.form-control.bold,
@@ -283,8 +294,8 @@ body[data-route^="Form/Appointment/"] {
     }
 
     .control-input .select-icon {
-        right: 20px;
         top: inherit !important;
+        right: 16px !important;
         transform: translateY(-1px);
         width: 24px;
         height: 24px;
@@ -299,6 +310,10 @@ body[data-route^="Form/Appointment/"] {
         svg {
             display: none;
         }
+    }
+
+    .frappe-control:last-child .form-group {
+        margin-bottom: 0 !important;
     }
 
     .form-group.horizontal {
