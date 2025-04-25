@@ -1,17 +1,24 @@
-body[data-route="List/Appointment/List"] {
+body[data-route^="List/Appointment/"],
+body[data-route^="Form/Appointment/"] {
     background:
         radial-gradient(circle at 160px 857px, var(--gradient-color-1), var(--gradient-color-2) calc(528px * 0.6)),
         radial-gradient(circle at 1510px 110px, var(--gradient-color-1), var(--gradient-color-2) calc(632px * 0.6)),
         var(--light-periwinkle) !important;
 
-
+    /* Overall styling */
     .btn.btn-primary {
         background-color: var(--deep-royal-blue);
     }
 
-    .page-head, .page-container, .navbar, .form-page {
+    .page-head,
+    .page-container,
+    .navbar,
+    .form-page,
+    .sticky-top,
+    .list-row-container {
         background-color: transparent !important;
         border: none !important;
+        position: static !important;
     }
 
     .page-head-content {
@@ -24,10 +31,40 @@ body[data-route="List/Appointment/List"] {
         display: none !important;
     }
 
-    .page-form {
-        height: 0;
-        overflow: hidden;
-        background-color: transparent !important;
+    .list-paging-area.level {
+        display: none !important;
+    }
+
+    .list-header-checkbox,
+    .list-row-checkbox {
+        width: 22px !important;
+        height: 22px !important;
+        border: 2px solid var(--custom-gray) !important;
+        border-radius: 7px;
+
+        &:checked {
+            background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%2021%2021%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M6.07275%2010.5007L9.02067%2013.4486L14.9269%207.55273%22%20stroke%3D%22white%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E"),
+                linear-gradient(var(--vivid-orange));
+            border: none !important;
+            background-size: 100%;
+        }
+    }
+
+    .select-like {
+        padding: 0 !important;
+    }
+
+    /* == APPOINTMENTS LIST PAGE == */
+
+    .page-actions {
+        & > .custom-actions,
+        & > .filters.flex {
+            display: none !important;
+        }
+
+        .standard-actions > *:not([data-label="Add Appointment"]) {
+            display: none !important;
+        }
     }
 
     .list-row-col.ellipsis.list-subject.level span:last-child {
@@ -39,23 +76,161 @@ body[data-route="List/Appointment/List"] {
         font-weight: 700 !important;
     }
 
-    .list-row-col * {
+    header.list-row-head {
+        box-sizing: border-box;
+        padding: 20px !important;
+
+        &>div {
+            height: 25px;
+        }
+
+        * {
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            color: var(--custom-gray) !important;
+        }
+
+        .checkbox-actions .list-header-meta {
+            margin-left: 20px;
+        }
+
+        .select-like {
+            padding: 0;
+        }
+
+        .list-subject {
+            margin: 0 20px 0 0;
+            flex: unset !important;
+        }
+    }
+
+    .list-row-container {
+        .list-row {
+            background-color: var(--white);
+            padding: 27px 20px 26px 20px;
+            height: fit-content !important;
+        }
+
+        *:not(span) {
+            font-weight: 600 !important;
+            color: var(--black) !important;
+            font-size: 18px !important;
+        }
+
+        .list-subject {
+            flex: unset !important;
+        }
+    }
+
+    [title^="Status:"]>span {
+        padding: 8px 14px !important;
+        height: unset !important;
+
+        &::before {
+            display: none !important;
+        }
+
+        span {
+            font-weight: 400 !important;
+            line-height: 1.2;
+        }
+    }
+
+    [title="Status: Scheduled"]>span {
+        background: var(--soft-pink);
+
+        span {
+            color: var(--vivid-red) !important;
+        }
+    }
+
+    [title="Status: New"]>span {
+        background: var(--soft-pink);
+
+        span {
+            color: var(--vivid-red) !important;
+        }
+    }
+
+    [title="Status: Pending"]>span {
+        background: var(--peach-cream);
+
+        span {
+            color: var(--vivid-orange) !important;
+        }
+    }
+
+    [title="Status: Submitted"]>span {
+        background: var(--mint-tint);
+
+        span {
+            color: var(--vivid-green) !important;
+        }
+    }
+
+    /* == APPOINTMENTS FORM PAGES == */
+
+    .form-tabs-list {
+        position: static !important;
+        margin: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .tab-pane {
+        background: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        padding: 40px;
+
+        flex-direction: column;
+        gap: 40px;
+
+        &.active {
+            display: flex !important;
+        }
+
+        .form-dashboard {
+            display: none;
+        }
+
+        .form-section .section-head {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px !important;
+        }
+    }
+
+    .form-section {
+        border: none !important;
+        padding: 0 !important;
+
+        &>* {
+            margin: 0 !important;
+        }
+    }
+
+    .form-tabs-list .form-tabs .nav-item .nav-link {
+        padding: 20px 28px;
+        box-sizing: border-box;
+        margin: 0 !important;
         font-weight: 700 !important;
-        color: var(--black) !important;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: var(--deep-royal-blue);
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid var(--deep-royal-blue);
     }
 
-    .list-row {
-        background-color: var(--white);
-        padding: 27px 20px 26px 0px !important;
+    .form-tabs-list .form-tabs .nav-item:has(a.active)~li a {
+        border-bottom-color: transparent;
+        color: var(--custom-gray);
     }
 
-    .list-subject {
-        margin: 0 12px;
-        flex: unset !important;
-    }
-
-    .list-paging-area.level {
-        display: none !important;
+    .page-form {
+        height: 0;
+        overflow: hidden;
+        background-color: transparent !important;
     }
 
     button[data-label="Add Appointment"] {
@@ -64,5 +239,191 @@ body[data-route="List/Appointment/List"] {
         border-radius: 30px;
         font-weight: 500;
         height: fit-content !important;
+    }
+
+    div:has(> .form-footer) {
+        display: none;
+    }
+
+    .form-footer {
+        display: none !important;
+    }
+
+    .form-section .form-column,
+    .form-section .section-head,
+    .form-section .section-body {
+        padding: 0 !important;
+    }
+
+    .section-body {
+        flex-wrap: nowrap !important;
+        gap: 80px;
+    }
+
+    textarea {
+        resize: none !important;
+    }
+
+    input[type="text"]:not(#navbar-search),
+    select.form-control,
+    select.form-control.bold,
+    .like-disabled-input,
+    textarea {
+        border-radius: 10px !important;
+        font-weight: 400 !important;
+        line-height: 24px;
+        color: var(--black) !important;
+        padding: 16px !important;
+        border: 1px solid var(--light-gray-silver);
+    }
+
+    input[type="text"]:not(#navbar-search),
+    select.form-control,
+    select.form-control.bold,
+    .like-disabled-input {
+        height: unset !important;
+    }
+
+    input[type="text"]:not(#navbar-search),
+    select.form-control,
+    select.form-control.bold,
+    textarea {
+        background: var(--white) !important;
+        transition: border 0.1s ease !important;
+
+        &:hover {
+            border: 1px solid var(--pale-blue);
+        }
+
+        &:focus {
+            border: 1px solid var(--deep-royal-blue);
+            box-shadow: none;
+        }
+    }
+
+    select {
+        cursor: pointer;
+    }
+
+    .control-input .select-icon {
+        top: inherit !important;
+        right: 16px !important;
+        transform: translateY(-1px);
+        width: 24px;
+        height: 24px;
+
+        &::after {
+            content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M19.92%208.94922L13.4%2015.4692C12.63%2016.2392%2011.37%2016.2392%2010.6%2015.4692L4.07996%208.94922%22%20stroke%3D%22%231442A6%22%20stroke-width%3D%221.5%22%20stroke-miterlimit%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+            width: 24px;
+            height: 24px;
+            position: absolute;   
+        }
+
+        svg {
+            display: none;
+        }
+    }
+
+    .frappe-control:last-child .form-group {
+        margin-bottom: 0 !important;
+    }
+
+    .form-group.horizontal,
+    .form-group:has(textarea) {
+        display: block !important;
+        position: relative;
+
+        .clearfix {
+            position: absolute;
+            z-index: 10;
+            left: 16px;
+            top: 7px;
+            height: 1px;
+            background: white;
+            width: fit-content !important;
+            padding: 0 4px;
+            display: flex;
+            align-items: center;
+            
+            .fa-globe {
+                display: none !important;
+            }
+        }
+
+        label {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 16px;
+            font-size: 12px;
+            transition: color 0.1s ease;
+        }
+
+        .control-input-wrapper {
+            padding-top: 7px;
+            width: 100% !important;
+        }
+
+        &:has(input[type="text"]:focus, textarea:focus, select:focus) label {
+            color: var(--deep-royal-blue) !important;
+        }
+    }
+
+    .form-group:has(textarea) .clearfix {
+        height: fit-content;
+        padding: 2px 4px !important;
+        border-radius: 6px;
+        top: -2px !important;
+    }
+
+    .link-field {
+        .link-btn {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    .tab-content .checkbox>label {
+        padding: 15px 30px;
+        line-height: 24px;
+        border: 1px solid var(--light-gray-silver);
+        background: var(--white);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: border 0.1s ease;
+
+        [type="checkbox"] {
+            display: none;
+        }
+
+        .label-area {
+            color: var(--deep-royal-blue) !important;
+            font-weight: 400 !important;
+            line-height: 150% !important;
+        }
+
+        &:has(input.disabled-selected) {
+            border-color: var(--deep-royal-blue) !important;
+        }
+
+        &:hover {
+            border: 1px solid var(--pale-blue) !important;
+        }
+    }
+
+    form:has(.form-group[data-fieldname^="custom"]) {
+        display: flex;
+        gap: 20px;
+
+        .form-group {
+            margin: 0 !important;
+        }
+
+        .input-max-width {
+            padding: 0 !important;
+        }
+    }
+
+    .help-box {
+        display: none !important;
     }
 }
