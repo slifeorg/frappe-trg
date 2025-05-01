@@ -1,11 +1,12 @@
+body[data-route^="List/FAQ Acticles/"],
 body[data-route^="List/Appointment/"],
 body[data-route^="Form/Appointment/"] {
+    /* == LOCAL STYLES == */
     background:
         radial-gradient(circle at 160px 857px, var(--gradient-color-1), var(--gradient-color-2) calc(528px * 0.6)),
         radial-gradient(circle at 1510px 110px, var(--gradient-color-1), var(--gradient-color-2) calc(632px * 0.6)),
         var(--light-periwinkle) !important;
 
-    /* Overall styling */
     .btn.btn-primary {
         background-color: var(--deep-royal-blue);
     }
@@ -27,11 +28,10 @@ body[data-route^="Form/Appointment/"] {
         padding-bottom: 12px !important;
     }
 
-    .layout-side-section.right {
-        display: none !important;
-    }
-
-    .list-paging-area.level {
+    .layout-side-section.right,
+    .list-paging-area.level,
+    .page-actions > .custom-actions,
+    .page-actions > .filters.flex {
         display: none !important;
     }
 
@@ -50,37 +50,36 @@ body[data-route^="Form/Appointment/"] {
         }
     }
 
+    /* == LIST PAGE == */
+
+    .title-text {
+        font-size: 36px !important;
+        font-weight: 700 !important;
+    }
+}
+
+body[data-route^="List/Appointment/"],
+body[data-route^="Form/Appointment/"] {
+
+    /* == LOCAL STYLES == */
     .select-like {
         padding: 0 !important;
     }
 
     /* == APPOINTMENTS LIST PAGE == */
-
-    .page-actions {
-        & > .custom-actions,
-        & > .filters.flex {
-            display: none !important;
-        }
-
-        .standard-actions > *:not([data-label="Add Appointment"]) {
-            display: none !important;
-        }
+    .page-actions .standard-actions > *:not([data-label="Add Appointment"]) {
+        display: none !important;
     }
 
     .list-row-col.ellipsis.list-subject.level span:last-child {
         display: none;
     }
 
-    .title-text {
-        font-size: 36px !important;
-        font-weight: 700 !important;
-    }
-
     header.list-row-head {
         box-sizing: border-box;
         padding: 20px !important;
 
-        &>div {
+        & > div {
             height: 25px;
         }
 
@@ -323,7 +322,7 @@ body[data-route^="Form/Appointment/"] {
         transform: translateY(-1px);
         width: 24px;
         height: 24px;
-        
+
         svg {
             width: 24px !important;
             height: 24px !important;
@@ -360,7 +359,7 @@ body[data-route^="Form/Appointment/"] {
             padding: 0 4px;
             display: flex;
             align-items: center;
-            
+
             .fa-globe {
                 display: none !important;
             }
