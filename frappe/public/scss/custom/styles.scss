@@ -161,8 +161,8 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
         margin-bottom: 0 !important;
     }
 
-    // Textarea
-    textarea {
+    // Textarea and QL editor
+    textarea, .ql-editor {
         resize: none !important;
     }
 

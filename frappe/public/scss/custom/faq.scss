@@ -46,4 +46,55 @@ body[data-route^="Form/FAQ Acticles/"] {
     .form-tabs-list {
         display: none !important;
     }
+
+    // Container for QL editor
+    .ql-container {
+        background: transparent !important;
+        border: none !important;   
+    }
+
+    .ql-editor {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        border-radius: 10px;
+        line-height: 24px;
+        color: var(--black) !important;
+        padding: 16px !important;
+        
+        border: 1px solid var(--light-gray-silver);
+        background: var(--white) !important;
+        transition: border 0.1s ease !important;
+
+        &:hover {
+            border: 1px solid var(--pale-blue);
+        }
+
+        &:focus {
+            border: 1px solid var(--deep-royal-blue);
+        }
+    }
+
+    // Toolbar for textarea
+    .ql-toolbar.ql-snow {
+        background: var(--white);
+        padding: 10px 20px 11px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+
+        .ql-formats {
+            margin-bottom: 0 !important;
+        }
+
+        .ql-formats:has(
+            .ql-blockquote,
+            .ql-code-block,
+            .ql-table
+        ) {
+            display: none !important;
+        }
+    }
 }
