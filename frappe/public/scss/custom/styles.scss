@@ -161,6 +161,55 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
         margin-bottom: 0 !important;
     }
 
+    // From group with label and input
+    .form-group.horizontal,
+    .form-group:has(textarea) {
+        display: block !important;
+        position: relative;
+
+        .clearfix {
+            position: absolute;
+            z-index: 10;
+            left: 16px;
+            top: 7px;
+            height: 1px;
+            background: white;
+            width: fit-content !important;
+            padding: 0 4px;
+            display: flex;
+            align-items: center;
+
+            .fa-globe {
+                display: none !important;
+            }
+        }
+
+        label {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 16px;
+            font-size: 12px;
+            transition: color 0.1s ease;
+        }
+
+        .control-input-wrapper {
+            padding-top: 7px;
+            width: 100% !important;
+        }
+
+        &:has(input[type="text"]:focus, textarea:focus, select:focus) label {
+            color: var(--deep-royal-blue) !important;
+        }
+    }
+
+    // From group with textarea label
+    .form-group:has(textarea) .clearfix {
+        height: fit-content;
+        padding: 2px 4px !important;
+        border-radius: 6px;
+        top: -2px !important;
+    }
+
     // Textarea and QL editor
     textarea, .ql-editor {
         resize: none !important;

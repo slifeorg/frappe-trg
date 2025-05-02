@@ -47,10 +47,36 @@ body[data-route^="Form/FAQ Acticles/"] {
         display: none !important;
     }
 
+    // Label for QL editor
+    .form-group:has(.ql-container) .clearfix {
+        display: none !important;
+    }
+
     // Container for QL editor
     .ql-container {
         background: transparent !important;
-        border: none !important;   
+        border: none !important;
+        position: relative;
+
+        &::before {
+            content: "Content";
+            position: absolute;
+            z-index: 10;
+            left: 16px;
+            top: 0px;
+            height: 1px;
+            background: white;
+            width: fit-content !important;
+            padding: 0 4px;
+            display: flex;
+            align-items: center;
+            color: var(--custom-gray);
+            transition: color 0.1s ease;
+        }
+
+        &:has(.ql-editor:focus)::before {
+            color: var(--deep-royal-blue);
+        }
     }
 
     .ql-editor {
@@ -79,11 +105,12 @@ body[data-route^="Form/FAQ Acticles/"] {
     // Toolbar for textarea
     .ql-toolbar.ql-snow {
         background: var(--white);
-        padding: 10px 20px 11px;
+        padding: 10px 20px;
         border-radius: 50px;
-        margin-bottom: 10px;
+        margin-bottom: 17px;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         .ql-formats {
             margin-bottom: 0 !important;
