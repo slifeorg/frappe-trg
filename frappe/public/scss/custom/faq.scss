@@ -1,0 +1,49 @@
+body[data-route^="List/FAQ Acticles/"],
+body[data-route^="Form/FAQ Acticles/"] {
+
+
+    /* ## LOCAL STYLES ## */
+
+
+    /* ## FAQ LIST PAGE ## */
+
+
+    // List of entries
+    .list-row-container .list-row {
+        padding: 27px 40px 26px;
+    }
+
+    // Heading row
+    header.list-row-head {
+        padding: 10px 40px !important;
+    }
+    
+    // Form above the list
+    .page-form {
+        margin: 18px 15px 20px;
+        padding: 14px 40px;
+        border-radius: 10px;
+
+        .form-group {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .filter-section {
+            display: none;
+        }
+    }
+
+    // Checkbox for selecting rows
+    .select-like {
+        display: none !important;
+    }
+
+
+    /* ## FAQ FORM PAGE ## */
+
+    // Form tab list
+    .form-tabs-list {
+        display: none !important;
+    }
+}
