@@ -8,6 +8,15 @@ body[data-route^="Form/FAQ Acticles/"] {
     /* ## FAQ LIST PAGE ## */
 
 
+    // Save button
+    .btn[data-label="Save"] {
+        padding: 15px 40px;
+        height: fit-content;
+        border-radius: 30px;
+        font-size: 18px;
+    }
+
+
     // List of entries
     .list-row-container .list-row {
         padding: 27px 40px 26px;
@@ -44,7 +53,9 @@ body[data-route^="Form/FAQ Acticles/"] {
 
     // Form tab list
     .form-tabs-list {
-        display: none !important;
+        opacity: 0.5;
+        margin: 20px;
+        border-radius: 10px;
     }
 
     // Label for QL editor
