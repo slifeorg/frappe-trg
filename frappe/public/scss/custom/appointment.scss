@@ -126,11 +126,7 @@ body[data-route^="Form/Appointment/"] {
     .form-section .section-head,
     .form-section .section-body {
         padding: 0 !important;
-    }
-
-    .section-body {
-        flex-wrap: nowrap !important;
-        gap: 80px;
+        border: none !important;
     }
 
     // Select input's icon
@@ -195,7 +191,8 @@ body[data-route^="Form/Appointment/"] {
     // Form with custom checkboxes
     form:has(.form-group[data-fieldname^="custom"]) {
         display: flex;
-        gap: 20px;
+        gap: 12px 20px;
+        flex-wrap: wrap;
 
         .form-group {
             margin: 0 !important;
