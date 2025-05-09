@@ -1,6 +1,18 @@
 @import './appointment.scss';
 @import './faq.scss';
 
+:root {
+    --col-md-6-gap: 40px;
+
+    @media (min-width: 768px) {
+        --col-md-6-gap: 60px;
+    }
+
+    @media (min-width: 992px) {
+        --col-md-6-gap: 80px;
+    }
+}
+
 body[data-route^="List/FAQ Acticles/"], body[data-route^="Form/FAQ Acticles/"],
 body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
     
@@ -113,6 +125,7 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
 
         .sort-icon {
             width: 20px;
+            min-width: 20px;
             aspect-ratio: 1 / 1;
             fill: transparent;
         }
@@ -159,6 +172,18 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
     // Last form group inside a column
     .frappe-control:last-child .form-group {
         margin-bottom: 0 !important;
+    }
+
+    .form-section .section-body {
+        gap: 20px var(--col-md-6-gap);
+    }
+
+    @media (min-width: 576px) {
+        // Form columns
+        .form-section .section-body:has(> .col-sm-6:nth-child(2)) > .col-sm-6 {
+            flex: 0 0 calc(50% - var(--col-md-6-gap) / 2);
+            max-width: calc(50% - var(--col-md-6-gap) / 2);
+        }
     }
 
     // From group with label and input
