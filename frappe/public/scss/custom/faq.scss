@@ -14,6 +14,13 @@ body[data-route^="Form/FAQ Acticles/"] {
         height: fit-content;
         border-radius: 30px;
         font-size: 18px;
+        gap: 10px;
+
+        .save-icon {
+            width: 24px;
+            aspect-ratio: 1 / 1;
+            fill: none;
+        }
     }
 
 
