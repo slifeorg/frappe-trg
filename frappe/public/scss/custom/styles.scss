@@ -125,6 +125,7 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
 
         .sort-icon {
             width: 20px;
+            min-width: 20px;
             aspect-ratio: 1 / 1;
             fill: transparent;
         }

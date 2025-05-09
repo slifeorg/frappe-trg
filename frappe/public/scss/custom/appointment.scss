@@ -110,9 +110,9 @@ body[data-route^="Form/Appointment/"] {
         border-bottom: 2px solid var(--deep-royal-blue);
     }
 
-    @media (min-width: 1367px) {
+    @media (min-width: 992px) {
         .form-tabs-list .form-tabs .nav-item .nav-link {
-            padding: 20px 24px;
+            padding: 20px 1vw;
         }
     }
 
