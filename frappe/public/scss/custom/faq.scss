@@ -1,5 +1,5 @@
-body[data-route^="List/FAQ Acticles/"],
-body[data-route^="Form/FAQ Acticles/"] {
+body[data-route^="List/FAQ Articles/"],
+body[data-route^="Form/FAQ Articles/"] {
 
 
     /* ## LOCAL STYLES ## */
@@ -33,7 +33,7 @@ body[data-route^="Form/FAQ Acticles/"] {
     header.list-row-head {
         padding: 10px 40px !important;
     }
-    
+
     // Form above the list
     .page-form {
         margin: 18px 15px 20px;
@@ -106,7 +106,7 @@ body[data-route^="Form/FAQ Acticles/"] {
         line-height: 24px;
         color: var(--black) !important;
         padding: 16px !important;
-        
+
         border: 1px solid var(--light-gray-silver);
         background: var(--white) !important;
         transition: border 0.1s ease !important;
@@ -140,6 +140,24 @@ body[data-route^="Form/FAQ Acticles/"] {
             .ql-table
         ) {
             display: none !important;
+        }
+    }
+
+
+    .standard-filter-section {
+        gap: 15px;
+    }
+
+
+    .tab-pane.active{
+        background: transparent;
+        flex-direction: row-reverse;
+        padding: 0;
+
+        div[data-fieldname="section_info"],
+        div[data-fieldname="section_edit"]{
+            background: white;
+            border-radius: 10px;
         }
     }
 }

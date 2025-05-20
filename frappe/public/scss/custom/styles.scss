@@ -13,12 +13,12 @@
     }
 }
 
-body[data-route^="List/FAQ Acticles/"], body[data-route^="Form/FAQ Acticles/"],
+body[data-route^="List/FAQ Articles/"], body[data-route^="Form/FAQ Articles/"],
 body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
-    
-    
+
+
     /* ## LOCAL STYLES ## */
-    
+
 
     background:
         radial-gradient(circle at 160px 857px, var(--gradient-color-1), var(--gradient-color-2) calc(528px * 0.6)),
@@ -133,7 +133,7 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
 
 
     /* ## FORM PAGE ## */
-    
+
     // Tab content
     .tab-pane {
         background: #fff;
@@ -158,7 +158,7 @@ body[data-route^="List/Appointment/"], body[data-route^="Form/Appointment/"] {
             margin-bottom: 20px !important;
         }
     }
-    
+
     // Form inside tab pane
     .form-section {
         border: none !important;
